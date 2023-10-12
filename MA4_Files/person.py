@@ -11,6 +11,7 @@ class Person(object):
 		lib.Person_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
 		lib.Person_delete.argtypes = [ctypes.c_void_p]
 		lib.Person_fibonacci.argtypes = [ctypes.c_void_p]
+		lib.Person_fibonacci.restype = ctypes.c_long
 		self.obj = lib.Person_new(age)
 
 	def get(self):

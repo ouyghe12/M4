@@ -6,7 +6,7 @@ public:
 	Person(int);
 	int get();
 	void set(int);
-	int fibonacci(int n);
+	long fibonacci(int n);
 private:
 	int age;
 };
@@ -19,7 +19,7 @@ int Person::get(){
 void Person::set(int n){
 	age = n;
 }
-int Person::fibonacci(int n) {
+long Person::fibonacci(int n) {
 	if (n <= 1) {
 		return n;
 	}else {
@@ -30,7 +30,7 @@ int Person::fibonacci(int n) {
 extern "C"{
 	Person* Person_new(int n) {return new Person(n);}
 	int Person_get(Person* person) {return person->get();}
-	int Person_fibonacci(Person* person) {
+	long Person_fibonacci(Person* person) {
 	return person->fibonacci(person->get());
  }
 	void Person_set(Person* person, int n) {person->set(n);}
